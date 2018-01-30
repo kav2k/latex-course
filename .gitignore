@@ -8,6 +8,10 @@
 *.pyg
 *.bbl
 *.blg
+*.fls
+*.fdb_latexmk
+en/_minted*
+*.synctex.gz
 .*.swp
 en/part1.pdf
 en/part2.pdf
