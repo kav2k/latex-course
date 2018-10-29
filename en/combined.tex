@@ -9,6 +9,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \titlepage
+
+\begin{center}
+  Open in your browser:
+  
+  \url{https://goo.gl/u7nWK3}
+\end{center}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -51,22 +57,27 @@
 \subsection{What is / why \LaTeX{}?}
 
 \begin{frame}{Why \LaTeX{}?}
-\begin{itemize}
-\item It makes beautiful documents
-\begin{itemize}
-\item Especially mathematics
-\end{itemize}
-%
-\item It was created by scientists, for scientists
-\begin{itemize}
-\item A large and active community
-\end{itemize}
-%
-\item It is powerful --- you can extend it
-\begin{itemize}
-\item Packages for papers, presentations, spreadsheets, \ldots
-\end{itemize}
-\end{itemize}
+  \begin{itemize}
+    \item It makes beautiful documents
+    \begin{itemize}
+      \item Especially mathematics
+    \end{itemize}
+    %
+    \item It was created by scientists, for scientists
+    \begin{itemize}
+      \item A large and active community
+    \end{itemize}
+    %
+    \item It is powerful --- you can extend it
+    \begin{itemize}
+      \item Packages for papers, presentations, spreadsheets, \ldots
+    \end{itemize}
+
+    \item You may be required to use it
+    \begin{itemize}
+      \item Some journals, conferences, publishers expect it
+    \end{itemize}
+  \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -115,8 +126,6 @@ The rain in Spain falls \emph{mainly} on the plain.
 \alpha + \beta + 1
 \end{equation}
 \end{exampletwoup}
-
-\tiny{Image license: \href{https://pixabay.com/en/animal-apple-attractive-beautiful-1239390/}{CC0}}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -128,6 +137,16 @@ The rain in Spain falls \emph{mainly} on the plain.
 \item Use commands to describe `what it is', not `how it looks'.
 \item Focus on your content.
 \item Let \LaTeX{} do its job.
+\end{itemize}
+
+\bigskip
+
+For the tech-savvy:
+
+\begin{itemize}
+  \item \LaTeX{} is like programming: you write source code.
+  \item \LaTeX{} can be seen as a markup language.\\(compare: HTML, Markdown)
+  \item \LaTeX{} is Turing-complete!
 \end{itemize}
 \end{frame}
 
@@ -159,7 +178,8 @@ will ignore the rest of the line.
 \fbox{\href{\wlnewdoc{basics.tex}}{%
 Click here to open the example document in \wllogo{}}}
 \\[1ex]\scriptsize{}
-For best results, please use \href{http://www.google.com/chrome}{Google Chrome} or a recent \href{http://www.mozilla.org/en-US/firefox/new/}{FireFox}.
+For best results, please use \href{http://www.google.com/chrome}{Google Chrome}
+or a recent \href{http://www.mozilla.org/en-US/firefox/new/}{Mozilla Firefox}.
 \end{center}
 \vskip 2ex
 \item As we go through the following slides, try out the examples by typing them
@@ -186,8 +206,14 @@ or more blank lines.
 \end{exampletwouptiny}
 \item Space in the source file is collapsed in the output.
 \begin{exampletwouptiny}
-The   rain       in Spain
-falls mainly on the plain.
+  The   rain       in Spain
+  falls mainly on the plain.
+\end{exampletwouptiny}
+
+\item You can typeset en- and em-dashes:
+\begin{exampletwouptiny}
+  The proof is quite easy ---
+    as noted on pages 10--13.
 \end{exampletwouptiny}
 \end{itemize}
 \end{frame}
@@ -531,8 +557,7 @@ click here to see my solution}}.
 \end{itemize}
 \item That's amazing!
 \item Next, we'll see how to use \LaTeX{} to write structured documents
-with sections, cross references, figures, tables and bibliographies. See you
-then!
+with sections, cross references, figures, tables and bibliographies.
 \end{itemize}
 \end{frame}
 
@@ -555,7 +580,7 @@ then!
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{\insertsection}
 \begin{itemize}
-\item In Part 1, we learned about commands and environments for typesetting text
+\item So far, we learned about commands and environments for typesetting text
 and mathematics.
 \item Now, we'll learn about commands and environments for structuring
 documents.
@@ -565,8 +590,6 @@ documents.
 \begin{center}
 \fbox{\href{\wlnewdoc{basics.tex}}{%
 Click here to open the example document in \wllogo{}}}
-\\[1ex]\scriptsize{}
-For best results, please use \href{http://www.google.com/chrome}{Google Chrome} or a recent \href{http://www.mozilla.org/en-US/firefox/new/}{FireFox}.
 \end{center}
 \vskip 2ex
 \begin{itemize}
@@ -623,11 +646,27 @@ equations.
 }\end{itemize}
 \begin{minipage}{0.55\linewidth}
 \inputminted[fontsize=\scriptsize,frame=single,resetmargins]{latex}%
-  {structure-crossref.tex}
+  {structure-crossref-mini.tex}
 \end{minipage}
 \begin{minipage}{0.35\linewidth}
 \includegraphics[width=\textwidth,clip,trim=1.8in 6in 1.6in 1in]{structure-crossref.pdf}
 \end{minipage}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{References: Caveats}
+  \begin{itemize}
+    \item To be able to calculate references, \LaTeX{} sometimes
+      needs to be run several times.
+    
+    \item Overleaf manages that for you, but if you're using
+      \LaTeX{} locally you should be aware of that.
+    
+    \item There is a script \texttt{latexmk} that manages
+      that for you, it's normally included with \LaTeX{}.
+  \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -691,8 +730,6 @@ click here to see my solution}}.
   width=0.3\textwidth,
   angle=270]{gerbil}
 \end{exampletwouptiny}
-
-\tiny{Image license: \href{https://pixabay.com/en/animal-apple-attractive-beautiful-1239390/}{CC0}}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -711,7 +748,7 @@ the image take up 30\% of the width of the surrounding text (\cmdbs{textwidth}).
 makes the text bigger (12pt) and puts it into two columns.
 \item Where do you find out about these? See the slides at the end of this
 presentation for links to more information.
-\end{itemize}
+\end{itemize} 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -731,8 +768,6 @@ presentation for links to more information.
 \begin{minipage}{0.35\linewidth}
 \includegraphics[width=\textwidth,clip,trim=2in 5in 3in 1in]{media-graphics.pdf}
 \end{minipage}
-
-\tiny{Image license: \href{https://pixabay.com/en/animal-apple-attractive-beautiful-1239390/}{CC0}}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1029,7 +1064,7 @@ It \textcolor{red}{stops}
 and \textcolor{green}{starts}.
 \end{exampletwouptiny}
 \vskip 1ex
-\item See \url{http://www.math.umbc.edu/~rouben/beamer/quickstart-Z-H-25.html}
+\item See \url{https://en.wikibooks.org/wiki/LaTeX/Colors}
 for more colors \& custom colors.
 \end{itemize}
 \end{frame}
@@ -1049,8 +1084,6 @@ for more colors \& custom colors.
 \end{figure}
 \end{exampletwouptiny}
 \end{itemize}
-
-\tiny{Image license: \href{https://pixabay.com/en/animal-apple-attractive-beautiful-1239390/}{CC0}}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1111,6 +1144,15 @@ for a large collection of themes.
 \item There many more clever ways of making animations in \bftt{beamer}; see
 also the \cmdbs{only}, \cmdbs{alt}, and \cmdbs{uncover} commands.
 \end{itemize}
+{\small
+  More info on \texttt{beamer}:
+  \begin{itemize}
+    \item \href{https://en.wikibooks.org/wiki/LaTeX/Presentations}{LaTeX/Presentations on Wikibooks}
+    \item \href{http://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf}{Beamer package manual}
+  \end{itemize}
+}
+
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1159,6 +1201,8 @@ Click to open the model document}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\protect\tikzname{} examples}
+
 \begin{frame}[fragile]{\insertsection}
 \begin{itemize}
 \item \tikzname{} is a package for drawing figures in \LaTeX.
@@ -1348,8 +1392,10 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Exercise}
+
 \begin{frame}[fragile]{\insertsection: Exercise}
-Draw this in \tikzname:\footnote{Based on \url{http://xkcd.com/1022}}
+Draw this in \tikzname:\footnote{Based on \url{https://xkcd.com/1022}}
 \begin{figure}
 \input{tikz-exercise-solution}
 \end{figure}
@@ -1381,23 +1427,27 @@ Draw this in \tikzname:\footnote{Based on \url{http://xkcd.com/1022}}
 \subsection{More Neat Things}
 \begin{frame}[fragile]{\insertsubsection}
 \begin{itemize}
-\item Add the \cmdbs{tableofcontents} command to generate a table of contents
-from the \cmdbs{section} commands.
+\item The \cmdbs{tableofcontents} command also works outside \texttt{beamer}
+to generate a table of contents from the \cmdbs{section} commands.
 
-\item Change the \cmdbs{documentclass} to
-\mint{latex}!\documentclass{scrartcl}!
-or
-\mint{latex}!\documentclass[12pt]{IEEEtran}!
-
-\item Define your own command for a complicated equation:
+\item You can define your own commands as shortcuts:
 \begin{exampletwouptiny}
 \newcommand{\rperf}{%
   \rho_{\text{perf}}}
-$$
+\begin{equation*}
 \rperf = {\bf c}'{\bf X} + \varepsilon
-$$
+\end{equation*}
+
+\newcommand{\textblue}[1]{%
+  \textcolor{blue}{#1}}
+This is \textblue{blue} now.
 \end{exampletwouptiny}
 \end{itemize}
+
+{\scriptsize
+\keystrokebftt{\%} at the end of a line suppresses a line break where
+  \LaTeX{} is sensitive to whitespace.
+}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1406,12 +1456,10 @@ $$
 \subsection{More Neat Packages}
 \begin{frame}{\insertsubsection}
 \begin{itemize}
-\item \bftt{beamer}: for presentations (like this one!)
 \item \bftt{todonotes}: comments and TODO management
-\item \bftt{tikz}: make amazing graphics
 \item \bftt{pgfplots}: create graphs in \LaTeX
 \item \bftt{listings}: source code printer for \LaTeX
-\item \bftt{spreadtab}: create spreadsheets in \LaTeX
+\item \bftt{chemfig}, \bftt{mhchem}: chemical formulae and graphics
 \item \bftt{gchords}, \bftt{guitar}: guitar chords and tabulature
 \item \bftt{cwpuzzle}: crossword puzzles
 \end{itemize}
@@ -1433,7 +1481,8 @@ and (typically) several thousand packages.
 \item On Linux: \href{http://tug.org/texlive/}{\TeX Live}
 \item On Mac: \href{http://tug.org/mactex/}{Mac\TeX}
 \end{itemize}
-\item You'll also want a text editor with \LaTeX{} support. See \url{http://en.wikipedia.org/wiki/Comparison_of_TeX_editors} for a list of (many) options.
+\item You'll also want a text editor with \LaTeX{} support.
+See \href{http://en.wikipedia.org/wiki/Comparison_of_TeX_editors}{Comparison of TeX editors} for a list of (many) options.
 \item You'll also have to know more about how \bftt{latex} and its related tools
 work --- see the resources on the next slide.
 \end{itemize}
@@ -1445,9 +1494,9 @@ work --- see the resources on the next slide.
 \subsection{Online Resources}
 \begin{frame}{\insertsubsection}
 \begin{itemize}
-\item \href{http://en.wikibooks.org/wiki/LaTeX}{The \LaTeX{} Wikibook} ---
+\item \href{https://en.wikibooks.org/wiki/LaTeX}{The \LaTeX{} Wikibook} ---
 excellent tutorials and reference material.
-\item \href{http://tex.stackexchange.com/}{\TeX{} Stack Exchange} --- ask
+\item \href{https://tex.stackexchange.com/}{\TeX{} Stack Exchange} --- ask
 questions and get excellent answers incredibly quickly
 \item \href{http://www.latex-community.org/}{\LaTeX{} Community} --- a large
 online forum
@@ -1464,149 +1513,6 @@ over four thousand packages plus documentation
 \begin{center}
 Thanks, and happy \TeX{}ing!
 \end{center}
-\end{frame}
-
-\end{document}
-
-% -- latex understands words, sentences and paragraphs
-
-Words are separated by one or more spaces.  Paragraphs are separated by
-one or more blank lines.  The output is not affected by adding extra
-spaces or extra blank lines to the input file.
-
-Double quotes are typed like this: ``quoted text''.
-Single quotes are typed like this: `single-quoted text'.
-
-Emphasized text is typed like this: \emph{this is emphasized}.
-Bold       text is typed like this: \textbf{this is bold}.
-
--- Adding structure to your document
-
-\section{Hello}
-
-\subsection{World}
-
-\subsection{Foo}
-
-\subsubsection*{Stuff} % star form
-
-\subsubsection*{Results}
-
--- Labels and cross-references
-
-\label{sec:intro}
-\label{sec:method}
-\ref{sec:method}
-
---> maybe introduce the prettyref package here.
-
--- Mathematics
-
-Inline mathematics: $x + y < 7$.
-
-'Displayed' mathematics:
-\begin{equation}
-\end{equation}
-
-\begin{equation*}
-\end{equation*}
-
-\begin{align}
-\end{align}
-
--- Figures
-
-- Need the graphicx package.
-
-- here we can start introducing options
-
-\includegraphics[width=\textwidth]{}
-
-- where do you find out about these options? --> link to the Wikibook
-
--- Floating Figures
-
-\begin{figure}
-\includegraphics{...}
-\caption{\label{}Here is a caption.}
-\end{figure}
-
--- Tables
-
-- not the nicest part of LaTeX
-
-\usepackage{tabularx}
-
-\begin{tabular}{llr}
-Item & Quantity & Price (\$) & Amount
-Widget & 1 &
-\end{tabular}
-
-Bonus points: check out the fp package and the spreadtab package.
-
--- Document Classes
-
-a .cls file
-
-article
-
-some journal templates come with one
-
--- Bibliographies
-
-
-
--- For Typesetting Geeks
-
-- dashes: -, --, ---
-
-- ellipsis.
-
-- controlling spaces: ~, \ , \,, \@
-
-- spacing after periods (et al., etc.)
-
-- Nested quotation marks: ``\,`
-\vskip 2ex
-\item Use the \emph{star form} to display an equation without a number.
-\begin{exampletwouptiny}
-\begin{equation*}
-F(x) = \int_{a}^{x}{f(t) dt}
-\end{equation*}
-\end{exampletwouptiny}
-
-\begin{itemize}
-\item \bftt{equation} and \bftt{equation*} are called \emph{environments}.
-\begin{itemize}
-  \item The \cmdbs{begin} and \cmdbs{end} commands define the environment.
-  \item The \cmd{\$} also starts and ends an environment.
-  \item Some commands are defined only within certain environments.
-  \item Some commands behave differently in different environments.
-\end{itemize}
-\end{itemize}
-\end{block}
-\begin{center}
-\fbox{\href{http://ctan.org/}{The Comprehensive \TeX Archive Network (CTAN)}}
-\end{center}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Typography tweaks}
-\begin{frame}{\insertsubsection}
-\begin{tabular}{lll}
-& character name & used mainly for \ldots \\\hline
-\bftt{\bs} & backslash                 & commands, tables \\
-\bftt{\{}  & open brace                & commands \\
-\bftt{\}}  & close brace               & commands \\
-\bftt{\%}  & percent sign              & comments \\
-\bftt{\#}  & hash (pound / sharp) sign & custom commands \\
-\bftt{\$}  & dollar sign               & equations \\
-\bftt{\_}  & underscore                & equations (subscripts) \\
-\bftt{\^}  & caret                     & equations (superscripts) \\
-\bftt{\&}  & ampersand                 & tables \\
-\bftt{\~}  & tilde                     & spacing \\
-\end{tabular}
 \end{frame}
 
 \end{document}
